@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ProductController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,4 +17,12 @@ use App\Http\Controllers\AuthController;
 Route::get('/', function () {
     return view('index');
 });
+
+//login görüntüsü için route
 Route::get('/admin', [AuthController::class, 'index'])->name('admin');
+
+//login sistemi için route
+Route::post('/admin', [AuthController::class, 'login']);
+
+
+Route::get('product', [ProductController::class,'index']);
