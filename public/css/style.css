@@ -4,7 +4,15 @@
     margin: 0;
 }
 
+header{
+    background-color: #149EA8;
+}
+
+header ul *{
+    margin: 0 10px;
+}
+
 .header-logo img{
-    width: 100px;
+    width: 225px;
     height: 100px;
 }
