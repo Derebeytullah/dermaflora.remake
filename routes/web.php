@@ -19,10 +19,15 @@ Route::get('/', function () {
 });
 
 //login görüntüsü için route
-Route::get('/admin', [AuthController::class, 'index'])->name('admin');
+Route::get('/admin', [AuthController::class, 'Loginİndex'])->name('admin');
+//sign-up görüntüsü için route
+Route::get('/signup', [AuthController::class,'SignUpİndex'])->name('signup');
+
 
 //login sistemi için route
 Route::post('/admin', [AuthController::class, 'login']);
-
-
-Route::get('product', [ProductController::class,'index']);
+Route::prefix('admin')->group(function () {
+    Route::get('product', [ProductController::class,'index'])->name('product');
+    Route::get('/product/addproduct', [ProductController::class,'AddProductİndex'])->name('addproduct');
+    Route::post('/product/addproduct', [ProductController::class,'addproduct']);
+});

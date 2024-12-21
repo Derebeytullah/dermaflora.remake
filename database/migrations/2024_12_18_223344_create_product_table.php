@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('title'); // başlık kolonu
             $table->text('content'); // içerik kolonu
             $table->string('image'); // resim URL kolonu
-            $table->decimal('price', 8, 2); // fiyat kolonu (örneğin 999999.99 şeklinde)
+            $table->integer('price'); // fiyat kolonu (örneğin 999999.99 şeklinde)
             $table->string('link'); // ürün sayfası URL kolonu
             $table->timestamps(); // created_at ve updated_at tarihleri
         });
